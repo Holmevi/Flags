@@ -7,7 +7,9 @@ const Country = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        gap: 5
+        gap: 5,
+        background: '#202c36',
+        color: 'white'
     }}>
         <h1>Country page</h1>
     </Box>

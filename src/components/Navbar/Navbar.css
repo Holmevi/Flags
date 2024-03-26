@@ -1,0 +1,30 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 24px;
+    height: 64px;
+    background-color: #2b3844;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.TheFlagApp {
+    font-size: 20px;
+    color: white;
+}
+
+.DarkLightButton {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.DarkLightButtonIcon {
+    color: white;
+    scale: 90%;
+}
+
+.DarkLightButtonLabel {
+    color: white;
+}

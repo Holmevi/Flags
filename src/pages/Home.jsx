@@ -7,7 +7,10 @@ const Home = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        gap: 5
+        gap: 5,
+        background: '#202c36',
+        color: 'white'
+
     }}>
         <h1>Home page</h1>
     </Box>
