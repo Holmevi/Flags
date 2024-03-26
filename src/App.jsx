@@ -1,32 +1,13 @@
 import './App.css';
-import Home from './pages/Home.jsx';
-import Country from './pages/Country.jsx';
 import { Box } from '@mui/material';
+import Dashboard from './components/Dashboard/Dashboard';
 
-function App({ spotifyApi }) {
+function App() {
 	return (
 		<Box className="App">
-			<Country />
-			<Home />
+			<Dashboard />
 		</Box>
 	);
 }
 
-/*
-
-import './App.css'
-
-function App() {
-  return (
-    <div className='App'>
-      <nav className='navbar'>
-        <div>The Flag App</div>
-        <div>Dark Mode</div>
-      </nav>
-    </div>
-  )
-}
-*/
-export default App
-
-
+export default App;
