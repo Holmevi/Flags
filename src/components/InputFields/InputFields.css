@@ -1,0 +1,13 @@
+.InputFields {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.InputCountry {
+    width: 30%;
+}
+
+.SelectRegion {
+    border-color: white
+}
