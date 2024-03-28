@@ -20,6 +20,10 @@
     gap: 6px;
 }
 
+.DarkLightButton:hover {
+    background-color: blueviolet;
+}
+
 .DarkLightButtonIcon {
     color: white;
     scale: 90%;

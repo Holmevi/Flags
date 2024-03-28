@@ -8,6 +8,10 @@ const Navbar = () => {
         <img src="src\assets\techover-logo.png" alt="" />
         <Button variant="contained" disableElevation className="DarkLightButton" sx={{
             bgcolor: '#2b3844',
+            "&:hover": {
+                bgcolor: '#2b3844',
+                filter: 'brightness(1.2)'
+              },
             px: '8px',
             py: '6px',
         }}>
