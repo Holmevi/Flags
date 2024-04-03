@@ -11,27 +11,23 @@ const InputFields = () => {
         fontWeight="300"
         variant="outlined"
         sx={{
-          color: "white",
-          "& .MuiOutlinedInput-root": {
-            color: "white",
-            fontWeight: "400",
-            "&:hover": {
+            // Root class for the input field
+            "& .MuiOutlinedInput-root": {
+              color: "#000",
+              fontFamily: "Arial",
+              fontWeight: "bold",
+              // Class for the border around the input field
               "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: "white",
+                borderColor: "#2e2e2e",
+                borderWidth: "2px",
               },
             },
-            // Class for the border around the input field
-            "& .MuiOutlinedInput-notchedOutline": {
-              borderColor: "#2b3844",
-              borderWidth: "1px",
+            // Class for the label of the input field
+            "& .MuiInputLabel-outlined": {
+              color: "#2e2e2e",
+              fontWeight: "bold",
             },
-          },
-          // Class for the label of the input field
-          "& .MuiInputLabel-outlined": {
-            color: "white",
-            fontWeight: "400",
-          },
-        }}
+          }}
       />
       <Select className="SelectRegion" id="select-region" fontWeight="300"
         variant="outlined" />

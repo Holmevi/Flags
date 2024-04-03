@@ -2,12 +2,13 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    background-color: var(--div-background-color);
 }
 
 .InputCountry {
-    width: 30%;
+    width: 40%;
 }
 
 .SelectRegion {
-    border-color: white
+    width: 30%;
 }
