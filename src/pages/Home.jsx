@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import InputFields from "../components/InputFields/InputFields";
 
 const Home = () => {
-    return <Box classname='Home' sx={{
+    return <Box sx={{
         flex: 1,
         display: 'flex',
         justifycontent: 'flex-start',

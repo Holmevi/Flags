@@ -15,6 +15,10 @@
     color: var(--text-color);
 }
 
+.logo {
+    src: var(--logo);
+}
+
 .DarkLightButton {
     display: flex;
     flex-direction: row;

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 
 const Country = () => {
-    return <Box classname="Country" sx={{
+    return <Box sx={{
         flex: 1,
         display: 'flex',
         justifycontent: 'flex-start',

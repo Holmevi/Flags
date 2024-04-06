@@ -1,13 +1,29 @@
 #root {
-  --nav-background-color: #2b3844;
-  --button-hover-color: #3f5263;
-  --div-background-color: #202c36;
-  --text-color: white;
+  --nav-background-color: white;
+  --button-hover-color: #F2F2F2;
+  --div-background-color: #F2F2F2;
+  --text-color: black;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0rem;
   text-align: center;
 }
+
+[data-theme="dark"] {
+--nav-background-color: #2b3844;
+--button-hover-color: #3f5263;
+--div-background-color: #202c36;
+--text-color: white;
+--logo: "../src/assets/techover-logo.png"
+}
+
+[data-theme="light"] {
+  --nav-background-color: white;
+  --button-hover-color: #F2F2F2;
+  --div-background-color: #F2F2F2;
+  --text-color: black;
+  --logo: "../src/assets/techover-logo-dark.png"
+  }
 
 /* DARK
 --nav-background-color: #2b3844;
