@@ -1,14 +1,14 @@
 import { Box } from "@mui/material";
 import './Navbar.css'
-import DarkModeButton from "../Dashboard/DarkModeButton/DarkModeButton";
-import App from "../../App";
+import DarkModeButton from "../DarkModeButton/DarkModeButton";
 
-const Navbar = () => {
+
+const Navbar = ({ isDark, setIsDark }) => {
     return <Box className='Navbar'>
         <h1 className="TheFlagApp">The Flag App</h1>
-        <img className="logo" src={"var(--logo)"} alt="" />
-        <DarkModeButton />
-    </Box>;
+        <img src="src\assets\techover-logo.png" alt="" />
+        <DarkModeButton isDark={isDark} setIsDark={setIsDark} />
+    </Box>
 };
 
 export default Navbar;
