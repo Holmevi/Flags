@@ -87,8 +87,6 @@ const InputFields = ({ isDark, setIsDark }) => {
         label="Search for a country"
         fontWeight="300"
         variant="outlined"
-        isDark={isDark} // Pass isDark as a prop
-        setIsDark={setIsDark} // Pass setIsDark as a prop
         sx={{
           "& .MuiOutlinedInput-root": {
             borderColor: "#bdbdbd", // Gray border color

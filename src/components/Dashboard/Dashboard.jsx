@@ -17,18 +17,25 @@ const Dashboard = ({ isDark, setIsDark }) => {
       <Navbar isDark={isDark} setIsDark={setIsDark} />
       <Box
         sx={{
+          width: "100%",
           backgroundColor: "var(--div-background-color)",
           color: "var(--text-color)",
           height: "100%",
           flex: 1,
           overflowY: "auto",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
         }}
       >
         <Routes>
-          <Route path="/:id" element={<Country isDark={isDark} setIsDark={setIsDark} />} />
-          <Route path="/" element={<Home isDark={isDark} setIsDark={setIsDark} />} />
+          <Route
+            path="/:id"
+            element={<Country isDark={isDark} setIsDark={setIsDark} />}
+          />
+          <Route
+            path="/"
+            element={<Home isDark={isDark} setIsDark={setIsDark} />}
+          />
         </Routes>
       </Box>
     </Box>

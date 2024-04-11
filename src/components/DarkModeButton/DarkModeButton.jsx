@@ -24,7 +24,9 @@ const DarkModeButton = ({ isDark, setIsDark }) => {
       ) : (
         <Brightness4Icon className="DarkLightButtonIcon" />
       )}
-      <p className="DarkLightButtonLabel">{isDark ? "DARK MODE" : "LIGHT MODE"}</p>
+      <p className="DarkLightButtonLabel">
+        {isDark ? "DARK MODE" : "LIGHT MODE"}
+      </p>
     </Button>
   );
 };

@@ -1,0 +1,45 @@
+.CountryCard {
+  background-color: var(--nav-background-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 30%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Flag {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  border-radius: 10px;
+}
+
+.InfoField {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 15px;
+}
+
+.CountryName {
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.InfoPair {
+  display: flex;
+  flex-direction: row;
+}
+
+.InfoLabel {
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.Info {
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+}

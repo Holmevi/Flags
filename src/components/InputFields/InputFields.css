@@ -1,13 +1,13 @@
 .InputFields {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .InputCountry {
-    width: 40%;
+  width: 40%;
 }
 
 .SelectRegion {
-    width: 30%;
+  width: 30%;
 }
