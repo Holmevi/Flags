@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-const Country = () => {
+const Country = ({ isDark, setIsDark }) => {
     return <Box sx={{
         flex: 1,
         display: 'flex',

@@ -27,8 +27,8 @@ const Dashboard = ({ isDark, setIsDark }) => {
         }}
       >
         <Routes>
-          <Route path="/:id" element={<Country />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Country isDark={isDark} setIsDark={setIsDark} />} />
+          <Route path="/" element={<Home isDark={isDark} setIsDark={setIsDark} />} />
         </Routes>
       </Box>
     </Box>

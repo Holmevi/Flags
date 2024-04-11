@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import InputFields from "../components/InputFields/InputFields";
 
-const Home = () => {
+const Home = ({ isDark, setIsDark }) => {
     return <Box sx={{
         flex: 1,
         display: 'flex',
@@ -13,7 +13,7 @@ const Home = () => {
         color: '--text-color',
         padding: '30px 20px'
     }}>
-        <InputFields />
+        <InputFields isDark={isDark} setIsDark={setIsDark} />
         <h1>Home page</h1>
     </Box>
 };
