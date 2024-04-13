@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import InputFields from "../components/InputFields/InputFields";
 import CountryCard from "../components/CountryCard/CountryCard";
 
-const Home = ({ isDark, setIsDark }) => {
+const Home = ({ isDark, setIsDark, filteredData }) => {
   return (
     <Box
       sx={{
@@ -33,12 +33,16 @@ const Home = ({ isDark, setIsDark }) => {
           gap: "0px",
         }}
       >
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
-        <CountryCard />
+        {filteredData.map((country) => (
+          <CountryCard
+            key={country.country}
+            flag={country.flag}
+            country={country.country}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+          />
+        ))}
       </Box>
     </Box>
   );

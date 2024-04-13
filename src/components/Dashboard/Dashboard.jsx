@@ -4,7 +4,7 @@ import Home from "../../pages/Home";
 import Country from "../../pages/Country";
 import Navbar from "../Navbar/Navbar";
 
-const Dashboard = ({ isDark, setIsDark }) => {
+const Dashboard = ({ isDark, setIsDark, filteredData }) => {
   return (
     <Box
       sx={{
@@ -34,7 +34,7 @@ const Dashboard = ({ isDark, setIsDark }) => {
           />
           <Route
             path="/"
-            element={<Home isDark={isDark} setIsDark={setIsDark} />}
+            element={<Home isDark={isDark} setIsDark={setIsDark} filteredData={filteredData} />}
           />
         </Routes>
       </Box>

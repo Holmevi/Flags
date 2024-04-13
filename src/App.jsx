@@ -9,38 +9,49 @@ async function getCountryData() {
     const data = await response.json();
 
     // Filter and format the data
-    const filteredData = data.map((country) => {
-      return {
-        "country": country.name.common,
-        "population": country.population || 0,
-        "region": country.region,
-        "capital": country.capital ? country.capital[0] : "",
-        "flag": country.flags ? country.flags.png : ""
-      };
-    })
-    .filter(country => country.country && country.population && country.region && country.capital && country.flag)
-    .sort((a, b) => a.country.localeCompare(b.country));
+    const formattedData = data
+      .map((country) => {
+        return {
+          country: country.name.common,
+          population: country.population || 0,
+          region: country.region,
+          capital: country.capital ? country.capital[0] : "",
+          flag: country.flags ? country.flags.png : "",
+        };
+      })
+      .filter(
+        (country) =>
+          country.country &&
+          country.population &&
+          country.region &&
+          country.capital &&
+          country.flag
+      )
+      .sort((a, b) => a.country.localeCompare(b.country));
 
-    console.log(filteredData);
-
-    // Store filteredData in state or do something else with it
-    // setFilteredData(filteredData); // Assuming you'd use this in your component's state
+    return formattedData;
   } catch (e) {
     console.log(e);
+    return [];
   }
 }
 
 export function App() {
   const [isDark, setIsDark] = useState(true);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    // Call the getCountryData function when the component mounts
-    getCountryData();
+    async function fetchData() {
+      const data = await getCountryData();
+      setFilteredData(data);
+    }
+
+    fetchData();
   }, []);
 
   return (
     <Box className="App" data-theme={isDark ? "dark" : "light"}>
-      <Dashboard isDark={isDark} setIsDark={setIsDark} />
+      <Dashboard isDark={isDark} setIsDark={setIsDark} filteredData={filteredData} />
     </Box>
   );
 }
