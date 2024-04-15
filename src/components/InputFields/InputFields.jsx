@@ -78,7 +78,7 @@ const CustomSelect = ({ isDark, setIsDark, ...props }) => {
   );
 };
 
-const InputFields = ({ isDark, setIsDark }) => {
+const InputFields = ({ isDark, setIsDark, filterText, setFilterText }) => {
   return (
     <Box className="InputFields">
       <CustomTextField
@@ -87,6 +87,8 @@ const InputFields = ({ isDark, setIsDark }) => {
         label="Search for a country"
         fontWeight="300"
         variant="outlined"
+        value={filterText} // Pass the filterText value
+        onChange={(e) => setFilterText(e.target.value)} // Update filterText state
         sx={{
           "& .MuiOutlinedInput-root": {
             borderColor: "#bdbdbd", // Gray border color

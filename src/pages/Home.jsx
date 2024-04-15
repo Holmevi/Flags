@@ -1,8 +1,16 @@
+import React from 'react';
 import { Box } from "@mui/material";
 import InputFields from "../components/InputFields/InputFields";
 import CountryCard from "../components/CountryCard/CountryCard";
 
 const Home = ({ isDark, setIsDark, filteredData }) => {
+  const [filterText, setFilterText] = React.useState("");
+
+  // Filtered countries based on the input text
+  const filteredCountries = filteredData.filter((country) =>
+    country.country.toLowerCase().includes(filterText.toLowerCase())
+  );
+
   return (
     <Box
       sx={{
@@ -18,7 +26,12 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
         maxWidth: "1280px",
       }}
     >
-      <InputFields isDark={isDark} setIsDark={setIsDark} />
+      <InputFields 
+        isDark={isDark} 
+        setIsDark={setIsDark} 
+        filterText={filterText} 
+        setFilterText={setFilterText} // Pass the state and setState function
+      />
       <Box
         sx={{
           flex: 1,
@@ -33,16 +46,20 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
           gap: "0px",
         }}
       >
-        {filteredData.map((country) => (
-          <CountryCard
-            key={country.country}
-            flag={country.flag}
-            country={country.country}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-          />
-        ))}
+        {filteredCountries.length === 0 ? (
+          <p>Could not find that country!</p>
+        ) : (
+          filteredCountries.map((country) => (
+            <CountryCard
+              key={country.country}
+              flag={country.flag}
+              country={country.country}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+            />
+          ))
+        )}
       </Box>
     </Box>
   );
