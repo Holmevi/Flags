@@ -1,6 +1,8 @@
+import "../App.css";
 import { Box } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import CountryPage from "../components/CountryPage/CountryPage";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 const Country = ({ isDark, setIsDark, filteredData }) => {
   const navigate = useNavigate();
@@ -41,6 +43,18 @@ const Country = ({ isDark, setIsDark, filteredData }) => {
         maxWidth: "1280px",
       }}
     >
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "start",
+          flexDirection: "row",
+          width: "100%",
+        }}
+      >
+        <button className="backButton" onClick={() => window.history.back()}>
+          <ArrowBackIosIcon className="ArrowBackIosIcon" /> BACK
+        </button>
+      </Box>
       <CountryPage
         flag={countryData.flag}
         country={countryData.country}

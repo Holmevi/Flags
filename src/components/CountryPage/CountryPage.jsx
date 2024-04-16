@@ -15,7 +15,6 @@ const CountryPage = ({
 }) => {
   return (
     <Box className="CountryPage">
-      <button onClick={() => window.history.back()}>BACK</button>
       <img className="Flag" src={flag} alt={`${country} flag`} />
       <Box className="InfoField">
         <p className="CountryName">{country}</p>
