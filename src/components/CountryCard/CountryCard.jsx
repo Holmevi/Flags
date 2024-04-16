@@ -1,9 +1,16 @@
 import "./CountryCard.css";
 import { Box } from "@mui/material";
 
-const CountryCard = ({ flag, country, population, region, capital }) => {
+const CountryCard = ({
+  flag,
+  country,
+  population,
+  region,
+  capital,
+  onClick,
+}) => {
   return (
-    <Box className="CountryCard">
+    <Box className="CountryCard" onClick={onClick}>
       <img className="Flag" src={flag} alt={`${country} flag`} />
       <Box className="InfoField">
         <p className="CountryName">{country}</p>

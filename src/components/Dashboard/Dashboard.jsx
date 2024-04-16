@@ -30,11 +30,23 @@ const Dashboard = ({ isDark, setIsDark, filteredData }) => {
         <Routes>
           <Route
             path="/:id"
-            element={<Country isDark={isDark} setIsDark={setIsDark} />}
+            element={
+              <Country
+                isDark={isDark}
+                setIsDark={setIsDark}
+                filteredData={filteredData}
+              />
+            }
           />
           <Route
             path="/"
-            element={<Home isDark={isDark} setIsDark={setIsDark} filteredData={filteredData} />}
+            element={
+              <Home
+                isDark={isDark}
+                setIsDark={setIsDark}
+                filteredData={filteredData}
+              />
+            }
           />
         </Routes>
       </Box>

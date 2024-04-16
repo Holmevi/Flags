@@ -1,15 +1,21 @@
-import React from 'react';
 import { Box } from "@mui/material";
 import InputFields from "../components/InputFields/InputFields";
 import CountryCard from "../components/CountryCard/CountryCard";
+import { useNavigate } from "react-router-dom"; // <-- Import useNavigate
+import React from "react";
 
 const Home = ({ isDark, setIsDark, filteredData }) => {
   const [filterText, setFilterText] = React.useState("");
+  const navigate = useNavigate(); // <-- Initialize useNavigate here
 
   // Filtered countries based on the input text
   const filteredCountries = filteredData.filter((country) =>
     country.country.toLowerCase().includes(filterText.toLowerCase())
   );
+
+  const handleCountryClick = (countryName) => {
+    navigate(`/${countryName}`); // <-- Navigate to CountryPage with countryName
+  };
 
   return (
     <Box
@@ -26,10 +32,10 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
         maxWidth: "1280px",
       }}
     >
-      <InputFields 
-        isDark={isDark} 
-        setIsDark={setIsDark} 
-        filterText={filterText} 
+      <InputFields
+        isDark={isDark}
+        setIsDark={setIsDark}
+        filterText={filterText}
         setFilterText={setFilterText} // Pass the state and setState function
       />
       <Box
@@ -57,6 +63,7 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
               population={country.population}
               region={country.region}
               capital={country.capital}
+              onClick={() => handleCountryClick(country.country)} // <-- Pass handleCountryClick to CountryCard
             />
           ))
         )}
