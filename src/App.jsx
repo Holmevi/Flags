@@ -9,7 +9,7 @@ async function getCountryData() {
     const data = await response.json();
 
     // Filter and format the data
-    const formattedData = data
+    let formattedData = data
       .map((country) => {
         return {
           country: country.name?.common || "",
@@ -25,8 +25,22 @@ async function getCountryData() {
           borders: country.borders || []
         };
       })
-      // No strict filtering conditions, keep all countries
       .sort((a, b) => a.country.localeCompare(b.country));
+
+    // Convert cca3 codes in borders array to country names
+    const convertBordersToNames = (borders, data) => {
+      return borders.map((cca3) => {
+        const country = data.find((country) => country.cca3 === cca3);
+        return country ? country.country : cca3; // Return country name or cca3 code if not found
+      });
+    };
+
+    formattedData = formattedData.map((country) => {
+      return {
+        ...country,
+        borders: convertBordersToNames(country.borders, formattedData)
+      };
+    });
 
     console.log(formattedData.slice(0, 5)); // Print first 5 countries as a sample
     console.log("Number of countries:", formattedData.length); // Print number of countries
