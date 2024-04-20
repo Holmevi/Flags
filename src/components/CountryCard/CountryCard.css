@@ -52,3 +52,13 @@
   font-size: 14px;
   font-weight: 400;
 }
+
+@media only screen and (max-width: 700px) {
+  .CountryCard {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+}

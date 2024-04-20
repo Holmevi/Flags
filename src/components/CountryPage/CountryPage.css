@@ -1,75 +1,111 @@
 .CountryPage {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--nav-background-color);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 10px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--nav-background-color);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.FlagFieldCP {
+  width: 100%;
+  margin: auto;
+  padding: 20px 0px 20px 20px;
+}
+
+.FlagCP {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.InfoFieldCP {
+  display: flex;
+  gap: 0px;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.CountryNameCP {
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 700;
+  padding: 10px 10px 30px 10px;
+}
+
+.InfoColumnPairCP {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.InfoColumnCP {
+}
+
+.InfoPairCP {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.InfoLabelCP {
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  width: 400px;
+  max-width: 33%;
+  text-align: right;
+  margin-left: 10px;
+}
+
+.InfoCP {
+  color: var(--secondary-color);
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  text-align: left;
+  padding-right: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .CountryPage {
+    flex-direction: column;
+    width: 300px;
   }
-  
+
   .FlagFieldCP {
-    width: 47%;
-    padding: 0px;
+    width: 100%;
     margin: auto;
+    padding: 0px 0px 0px 0px;
   }
 
   .FlagCP {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 10px;
     width: 100%;
   }
-  
+
   .InfoFieldCP {
-    display: flex;
-    gap: 0px;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
-  
+
   .CountryNameCP {
-    color: var(--text-color);
-    font-size: 30px;
-    font-weight: 700;
-    padding: 10px 10px 30px 10px;
-
-  }
-  
-  .InfoColumnPairCP {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 20px 10px 20px 10px;
   }
 
-  .InfoColumnCP {
-
-  }
-
-  .InfoPairCP {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  
   .InfoLabelCP {
-    color: var(--secondary-color);
-    font-size: 16px;
-    font-weight: 700;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    width: 400px;
-    max-width: 33%;
-    text-align: right;
-    margin-left: 10px;
+    font-size: 12px;
   }
-  
+
   .InfoCP {
-    color: var(--secondary-color);
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    text-align: left;
-    padding-right: 20px;
+    font-size: 12px;
+  }
+}
