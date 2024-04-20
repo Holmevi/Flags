@@ -15,9 +15,12 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
   );
 
   // Filtered countries based on the selected region
-  const filteredCountriesByRegion = filterRegion === "all" ? 
-    filteredCountries : 
-    filteredCountries.filter((country) => country.region.toLowerCase() === filterRegion);
+  const filteredCountriesByRegion =
+    filterRegion === "all"
+      ? filteredCountries
+      : filteredCountries.filter(
+          (country) => country.region.toLowerCase() === filterRegion
+        );
 
   const handleCountryClick = (countryName) => {
     navigate(`/${countryName}`);

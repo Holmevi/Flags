@@ -1,34 +1,38 @@
 import "./InputFields.css";
-import { Box, Select, MenuItem, TextField } from "@mui/material";
 import React from "react";
 
-const InputFields = ({ isDark, setIsDark, filterText, setFilterText, filterRegion, setFilterRegion }) => {
+const InputFields = ({
+  isDark,
+  setIsDark,
+  filterText,
+  setFilterText,
+  filterRegion,
+  setFilterRegion,
+}) => {
   return (
-    <Box className="InputFields">
-      <TextField
+    <div className="InputFields">
+      <input
         className="InputCountry"
         id="input-country"
-        label="Search for a country"
-        variant="filled"
+        type="text"
+        placeholder="Search for a country"
         value={filterText}
         onChange={(e) => setFilterText(e.target.value)}
       />
-      <Select
+      <select
         className="SelectRegion"
         id="select-region"
-        label="Region"
-        variant="outlined"
         value={filterRegion}
         onChange={(e) => setFilterRegion(e.target.value)}
       >
-        <MenuItem value="all">All</MenuItem>
-        <MenuItem value="africa">Africa</MenuItem>
-        <MenuItem value="america">America</MenuItem>
-        <MenuItem value="asia">Asia</MenuItem>
-        <MenuItem value="europe">Europe</MenuItem>
-        <MenuItem value="oceania">Oceania</MenuItem>
-      </Select>
-    </Box>
+        <option value="all">All</option>
+        <option value="africa">Africa</option>
+        <option value="americas">Americas</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+    </div>
   );
 };
 
