@@ -51,7 +51,7 @@ const Country = ({ isDark, setIsDark, filteredData }) => {
           width: "100%",
         }}
       >
-        <button className="backButton" onClick={() => window.history.back()}>
+        <button className="backButton" onClick={() => navigate("/")}>
           <ArrowBackIosIcon className="ArrowBackIosIcon" /> BACK
         </button>
       </Box>

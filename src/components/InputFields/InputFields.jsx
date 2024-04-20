@@ -23,6 +23,7 @@ const InputFields = ({
         className="SelectRegion"
         id="select-region"
         value={filterRegion}
+        label="Select region"
         onChange={(e) => setFilterRegion(e.target.value)}
       >
         <option value="all">All</option>
