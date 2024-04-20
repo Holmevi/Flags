@@ -1,20 +1,26 @@
 import { Box } from "@mui/material";
 import InputFields from "../components/InputFields/InputFields";
 import CountryCard from "../components/CountryCard/CountryCard";
-import { useNavigate } from "react-router-dom"; // <-- Import useNavigate
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const Home = ({ isDark, setIsDark, filteredData }) => {
   const [filterText, setFilterText] = React.useState("");
-  const navigate = useNavigate(); // <-- Initialize useNavigate here
+  const [filterRegion, setFilterRegion] = React.useState("all");
+  const navigate = useNavigate();
 
   // Filtered countries based on the input text
   const filteredCountries = filteredData.filter((country) =>
     country.country.toLowerCase().includes(filterText.toLowerCase())
   );
 
+  // Filtered countries based on the selected region
+  const filteredCountriesByRegion = filterRegion === "all" ? 
+    filteredCountries : 
+    filteredCountries.filter((country) => country.region.toLowerCase() === filterRegion);
+
   const handleCountryClick = (countryName) => {
-    navigate(`/${countryName}`); // <-- Navigate to CountryPage with countryName
+    navigate(`/${countryName}`);
   };
 
   return (
@@ -36,7 +42,9 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
         isDark={isDark}
         setIsDark={setIsDark}
         filterText={filterText}
-        setFilterText={setFilterText} // Pass the state and setState function
+        setFilterText={setFilterText}
+        filterRegion={filterRegion}
+        setFilterRegion={setFilterRegion}
       />
       <Box
         sx={{
@@ -52,10 +60,10 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
           gap: "0px",
         }}
       >
-        {filteredCountries.length === 0 ? (
-          <p>Could not find that country!</p>
+        {filteredCountriesByRegion.length === 0 ? (
+          <p>Could not find countries in that region!</p>
         ) : (
-          filteredCountries.map((country) => (
+          filteredCountriesByRegion.map((country) => (
             <CountryCard
               key={country.country}
               flag={country.flag}
@@ -63,7 +71,7 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
               population={country.population}
               region={country.region}
               capital={country.capital}
-              onClick={() => handleCountryClick(country.country)} // <-- Pass handleCountryClick to CountryCard
+              onClick={() => handleCountryClick(country.country)}
             />
           ))
         )}
