@@ -13,6 +13,7 @@ const CountryPage = ({
   currencies,
   language,
   borders,
+  isLoading, // Add isLoading prop
 }) => {
   const navigate = useNavigate();
 
@@ -21,12 +22,63 @@ const CountryPage = ({
     navigate(`/${borderCountry}`);
   };
 
+  // Render skeleton while loading
+  if (isLoading) {
+    return (
+      <Box className="CountryPage">
+        <Box className="FlagFieldCP">
+          <Skeleton variant="square" sx={{ width: "100%", height: "200px" }} />
+        </Box>
+        <Box className="InfoFieldCP">
+          <Skeleton
+            variant="text"
+            sx={{ fontSize: 20, width: 150, margin: 2 }}
+          />
+          <Box className="InfoColumnPairCP">
+            <Box className="InfoColumnCP">
+              <Box className="InfoPairCP">
+                <p className="InfoLabelCP">Population:</p>
+                <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+              </Box>
+              <Box className="InfoPairCP">
+                <p className="InfoLabelCP">Region:</p>
+                <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+              </Box>
+              <Box className="InfoPairCP">
+                <p className="InfoLabelCP">Capital:</p>
+                <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+              </Box>
+              <Box className="InfoPairCP">
+                <p className="InfoLabelCP">Top Level Domain:</p>
+                <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+              </Box>
+              <Box className="InfoPairCP">
+                <p className="InfoLabelCP">Currencies:</p>
+                <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+              </Box>
+              <Box className="InfoPairCP">
+                <p className="InfoLabelCP">Language:</p>
+                <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+              </Box>
+              <Box className="InfoPairCP" id="BordersLabel">
+                <p className="InfoLabelCP">Borders:</p>
+                <Box className="BorderButtonsCP">
+                  <Skeleton variant="text" sx={{ fontSize: 14, width: 100 }} />
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    );
+  }
+
+  // Render actual content when not loading
   return (
     <Box className="CountryPage">
       <Box className="FlagFieldCP">
         <img className="FlagCP" src={flag} alt={`${country} flag`} />
       </Box>
-
       <Box className="InfoFieldCP">
         <p className="CountryNameCP">{country}</p>
         <Box className="InfoColumnPairCP">
@@ -77,53 +129,6 @@ const CountryPage = ({
         </Box>
       </Box>
     </Box>
-    /* Skeleton design that i want for my loading state, i want to render 9 skeleton cards until loading state is fullfilled. 
-    <Box className="CountryPage">
-    <Box className="FlagFieldCP">
-    <Skeleton
-						variant="square"
-						sx={{ width: '100%', height: '200px' }}
-					/>
-    </Box>
-    <Box className="InfoFieldCP">
-    <Skeleton variant="text" sx={{ fontSize: 20, width:150, margin: 2 }} />
-      <Box className="InfoColumnPairCP">
-        <Box className="InfoColumnCP">
-          <Box className="InfoPairCP">
-            <p className="InfoLabelCP">Population:</p>
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-          </Box>
-          <Box className="InfoPairCP">
-            <p className="InfoLabelCP">Region:</p>
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-          </Box>
-          <Box className="InfoPairCP">
-            <p className="InfoLabelCP">Capital:</p>
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-          </Box>
-          <Box className="InfoPairCP">
-            <p className="InfoLabelCP">Top Level Domain:</p>
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-          </Box>
-          <Box className="InfoPairCP">
-            <p className="InfoLabelCP">Currencies:</p>
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-          </Box>
-          <Box className="InfoPairCP">
-            <p className="InfoLabelCP">Language:</p>
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-          </Box>
-          <Box className="InfoPairCP" id="BordersLabel">
-            <p className="InfoLabelCP">Borders:</p>
-            <Box className="BorderButtonsCP">
-            <Skeleton variant="text" sx={{ fontSize: 14, width:100 }} />
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-    </Box>
-  </Box>
-  */
   );
 };
 

@@ -4,7 +4,7 @@ import Home from "../../pages/Home";
 import Country from "../../pages/Country";
 import Navbar from "../Navbar/Navbar";
 
-const Dashboard = ({ isDark, setIsDark, filteredData }) => {
+const Dashboard = ({ isDark, setIsDark, filteredData, isLoading }) => {
   return (
     <Box
       sx={{
@@ -35,6 +35,7 @@ const Dashboard = ({ isDark, setIsDark, filteredData }) => {
                 isDark={isDark}
                 setIsDark={setIsDark}
                 filteredData={filteredData}
+                isLoading={isLoading}
               />
             }
           />
@@ -45,6 +46,7 @@ const Dashboard = ({ isDark, setIsDark, filteredData }) => {
                 isDark={isDark}
                 setIsDark={setIsDark}
                 filteredData={filteredData}
+                isLoading={isLoading}
               />
             }
           />

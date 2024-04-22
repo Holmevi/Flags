@@ -4,7 +4,7 @@ import CountryCard from "../components/CountryCard/CountryCard";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-const Home = ({ isDark, setIsDark, filteredData }) => {
+const Home = ({ isDark, setIsDark, filteredData, isLoading }) => {
   const [filterText, setFilterText] = React.useState("");
   const [filterRegion, setFilterRegion] = React.useState("all");
   const navigate = useNavigate();
@@ -75,6 +75,7 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
               region={country.region}
               capital={country.capital}
               onClick={() => handleCountryClick(country.country)}
+              isLoading={isLoading}
             />
           ))
         )}
