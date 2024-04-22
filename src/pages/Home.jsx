@@ -63,7 +63,7 @@ const Home = ({ isDark, setIsDark, filteredData }) => {
           gap: "0px",
         }}
       >
-        {filteredCountriesByRegion.length === 0 ? (
+        {filteredCountriesByRegion.length === 0 && filterText && !isLoading ? (
           <p>Could not find countries in that region!</p>
         ) : (
           filteredCountriesByRegion.map((country) => (
