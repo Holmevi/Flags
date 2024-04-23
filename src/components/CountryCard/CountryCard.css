@@ -62,3 +62,7 @@
     transition: 0.2s;
   }
 }
+
+.CountryCard:hover {
+  scale: 1.02;
+}
