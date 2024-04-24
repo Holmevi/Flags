@@ -8,9 +8,9 @@ const Navbar = ({ isDark, setIsDark }) => {
       <h1 className="TheFlagApp">The Flag App</h1>
 
       {isDark ? (
-        <img className="logo" src="../src/assets/techover-logo.png" alt="" />
+        <img className="logo" src="/assets/techover-logo.png" alt="Techover" />
       ) : (
-        <img className="logo" src="../src/assets/techover-logo-dark.png" alt="" />
+        <img className="logo" src="/assets/techover-logo-dark.png" alt="Techover" />
       )}
 
       <DarkModeButton isDark={isDark} setIsDark={setIsDark} />
