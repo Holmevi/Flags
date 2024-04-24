@@ -36,7 +36,6 @@ const Country = ({ isDark, setIsDark, filteredData }) => {
         justifyContent: "flex-start",
         alignItems: "center",
         flexDirection: "column",
-        gap: 5,
         background: "--div-background-color",
         color: "--text-color",
       }}
