@@ -48,7 +48,7 @@
 }
 
 .Info {
-  color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 14px;
   font-weight: 400;
 }
