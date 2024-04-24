@@ -40,7 +40,6 @@ const Country = ({ isDark, setIsDark, filteredData }) => {
         background: "--div-background-color",
         color: "--text-color",
         padding: "30px 20px",
-        maxWidth: "1280px",
       }}
     >
       <Box

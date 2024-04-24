@@ -38,7 +38,6 @@ const Home = ({ isDark, setIsDark, filteredData, isLoading }) => {
         background: "--div-background-color",
         color: "--text-color",
         padding: "30px 20px",
-        maxWidth: "1280px",
       }}
     >
       <InputFields
