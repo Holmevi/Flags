@@ -58,3 +58,17 @@
 .backButton:hover {
   background-color: var(--back-hover-color);
 }
+
+.countryBox {
+  padding: 30px 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .backButton {
+    padding: 0px 7px;
+  }
+
+  .countryBox {
+    padding: 20px 20px;
+  }
+}

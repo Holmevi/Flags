@@ -29,7 +29,7 @@ const Country = ({ isDark, setIsDark, filteredData }) => {
   const borders = convertBordersToNames(countryData.borders, filteredData);
 
   return (
-    <Box
+    <Box className="countryBox"
       sx={{
         flex: 1,
         display: "flex",
@@ -39,7 +39,6 @@ const Country = ({ isDark, setIsDark, filteredData }) => {
         gap: 5,
         background: "--div-background-color",
         color: "--text-color",
-        padding: "30px 20px",
       }}
     >
       <Box
